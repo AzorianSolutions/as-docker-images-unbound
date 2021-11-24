@@ -14,7 +14,7 @@ The Unbound Resolver is a validating, recursive, caching DNS resolver. It is des
 
 ## TL;DR
 
-    docker run -d -p 12053:53/udp -p 12053:53 azoriansolutions/unbound-resolver
+    docker run -d -p 12053:53/udp -p 12053:53 azoriansolutions/unbound-resolver:debian
 
 ## Azorian Solutions Docker image strategy
 
@@ -46,7 +46,7 @@ With this approach, you may create a traditional Unbound resolver conf file and 
 
 To run a simple container on Docker with this image, execute the following Docker command;
 
-    docker run -d -p 12053:53/udp -p 12053:53 azoriansolutions/unbound-resolver
+    docker run -d -p 12053:53/udp -p 12053:53 azoriansolutions/unbound-resolver:debian
 
 If all goes well and the container starts, you should now be able to query this DNS recursor using dig;
 
@@ -59,7 +59,7 @@ To run this image using Docker Compose, create a YAML file with a name and place
     version: "3.3"
     services:
       recursor:
-        image: azoriansolutions/unbound-resolver
+        image: azoriansolutions/unbound-resolver:debian
         restart: unless-stopped
         ports:
           - "12053:53/udp"
@@ -79,20 +79,20 @@ The build-release command has the following parameter format;
 
     build-release IMAGE_TAG_NAME UNBOUND_VERSION DISTRO_REPO_NAME DISTRO_TAG
 
-So for example, to build the Unbound resolver version 1.13.1 on Alpine Linux 3.14, you would execute the following shell command:
+So for example, to build the Unbound resolver version 1.13.1 on Debian Linux 11.1-slim, you would execute the following shell command:
 
-    build-release 1.13.1-alpine-3.14 1.13.1 alpine 3.14
+    build-release 1.13.1-debian-11.1-slim 1.13.1 debian 11.1-slim
 
 The build-realease command assumes the following parameter defaults;
 
 - Image Tag Name: latest
 - Unbound Version: 1.13.2
-- Distro Name: alpine
-- Distro Tag: 3.14
+- Distro Name: debian
+- Distro Tag: 11.1-slim
 
 This means that running the build-release command with no parameters would be the equivalent of executing the following shell command:
 
-    build-release latest 1.13.2 alpine 3.14
+    build-release latest 1.13.2 debian 11.1-slim
 
 When the image is tagged during compilation, the repository portion of the image tag is derived from the contents of the .as/docker-registry file and the tag from the first parameter provided to the build-release command.
 
