@@ -77,16 +77,16 @@ If you want to build this image yourself, you can easily do so using the **build
 
 The build-release command has the following parameter format;
 
-    build-release IMAGE_TAG_NAME PDNS_VERSION DISTRO_REPO_NAME DISTRO_TAG
+    build-release IMAGE_TAG_NAME UNBOUND_VERSION DISTRO_REPO_NAME DISTRO_TAG
 
-So for example, to build the PowerDNS recursor version 1.13.1 on Alpine Linux 3.14, you would execute the following shell command:
+So for example, to build the Unbound resolver version 1.13.1 on Alpine Linux 3.14, you would execute the following shell command:
 
     build-release 1.13.1-alpine-3.14 1.13.1 alpine 3.14
 
 The build-realease command assumes the following parameter defaults;
 
 - Image Tag Name: latest
-- PDNS Version: 1.13.2
+- Unbound Version: 1.13.2
 - Distro Name: alpine
 - Distro Tag: 3.14
 
