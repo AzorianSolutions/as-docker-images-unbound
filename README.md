@@ -30,7 +30,7 @@ All documentation will be written with the assumption that you are already reaso
 
 ### Debian Linux
 
-- *1.13.2-debian, 1.13.2-debian-11.1-slim, debian
+- 1.13.2-debian, 1.13.2-debian-11.1-slim, debian
 
 ## Deploying this image
 

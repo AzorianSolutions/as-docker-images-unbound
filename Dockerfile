@@ -11,8 +11,7 @@ ENV UNBOUND_setuid=${UNBOUND_setuid:-unbound} \
   AS_UNBOUND_VERSION=${AS_UNBOUND_VERSION}
 
 RUN apk update \
-  && apk add g++ make pkgconfig openssl-dev boost-dev boost-serialization \
-  boost-system boost-thread boost-context lua5.3-dev luajit-dev expat-dev
+  && apk add g++ make pkgconfig openssl-dev expat-dev
 
 COPY src/unbound-${AS_UNBOUND_VERSION}.tar.gz /tmp/
 
