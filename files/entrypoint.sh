@@ -2,8 +2,6 @@
 
 [ -n "$DEBUG" ] && [ "$DEBUG" -gt 0 ] && set -x
 
-set -eo pipefail
-
 convert_file_vars() {
     for line in $(env)
     do
@@ -26,8 +24,8 @@ convert_file_vars() {
     done
 }
 
-# if command starts with an option, prepend the appropriate PDNS server command name
-if [ "${1:0:1}" = '-' ]; then
+# if command starts with an option, prepend the appropriate server command name
+if [[ ${1:0:1} = "-" ]]; then
 	set -- unbound "$@"
 fi
 
