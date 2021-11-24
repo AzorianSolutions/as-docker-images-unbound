@@ -26,7 +26,7 @@ convert_file_vars() {
     done
 }
 
-# if command starts with an option, prepend the appropriate PDNS server command name
+# if command starts with an option, prepend the appropriate server command name
 if [ "${1:0:1}" = '-' ]; then
 	set -- unbound "$@"
 fi
